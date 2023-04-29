@@ -1,0 +1,23 @@
+{
+  "name": "micromage",
+  "version": "0.1.0",
+  "description": "A Markdown driven blogging platform.",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview .",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1",
+    "vite": "^4.3.3"
+  },
+  "dependencies": {
+    "dompurify": "^3.0.2",
+    "marked": "^4.3.0",
+    "normalize.css": "^8.0.1"
+  }
+}

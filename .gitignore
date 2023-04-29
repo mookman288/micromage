@@ -1,0 +1,5 @@
+dist/
+!dist/config.json
+!dist/README.md
+!dist/posts/.gitkeep
+node_modules/
