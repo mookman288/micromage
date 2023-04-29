@@ -1,5 +1,6 @@
-dist/
+dist/**
 !dist/config.json
 !dist/README.md
-!dist/posts/.gitkeep
+!dist/posts/
+!dist/posts/hello-world.md
 node_modules/
