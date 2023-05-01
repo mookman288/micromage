@@ -2,6 +2,9 @@ const { defineConfig } = require('vite')
 
 module.exports = defineConfig({
 	root: 'src',
+	resolve: {
+		preserveSymlinks: true
+	},
 	build: {
 		emptyOutDir: true,
 		rollupOptions: {
