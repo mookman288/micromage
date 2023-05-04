@@ -1,0 +1,35 @@
+$breakpoints: (
+	'mobile': 640px,
+	'desktop': 1024px,
+	'widescreen': 1680px
+);
+
+$colors: (
+	'body-background': #FFF,
+	'accent-background': #EEE,
+	'text': #000
+);
+
+$darkModeColors: (
+	'body-background': #555,
+	'accent-background': #000,
+	'text': #FFF
+);
+
+:root {
+	@each $name, $color in $colors {
+		--color-#{$name}: #{$color};
+	}
+
+	@each $name, $breakpoint in $breakpoints {
+		--breakpoint-#{$name}: #{$breakpoint};
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		@each $name, $color in $darkModeColors {
+			--color-#{$name}: #{$color};
+		}
+	}
+}

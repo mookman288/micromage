@@ -1,0 +1,42 @@
+html {
+	box-sizing: border-box;
+	min-height: 100vh;
+}
+
+*, *:before, *:after, input[type=search] {
+	box-sizing: inherit;
+}
+
+body {
+	min-height: 100vh;
+	background-color: var(--color-body-background);
+	font-family: sans-serif, serif;
+
+	> div {
+		margin: 0 auto;
+		padding: 1rem;
+		width: 50%;
+		min-height: 100vh;
+		background-color: var(--color-accent-background);
+
+		@media all and (max-width: var(--breakpoint-mobile)) {
+			width: 100%;
+		}
+
+		@media all and (max-width: var(--breakpoint-desktop)) {
+			width: 85%;
+		}
+
+		@media all and (max-width: var(--breakpoint-widescreen)) {
+			width: 70%;
+		}
+	}
+}
+
+header {
+	h1 {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}

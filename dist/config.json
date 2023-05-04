@@ -3,6 +3,7 @@
 	"tagline": "A quick and witty tagline!",
 	"description": "This description is less than 160 characters!",
 	"sitePath": "/",
+	"lang": "en",
 	"posts": [
 		"hello-world"
 	]
