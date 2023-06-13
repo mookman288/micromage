@@ -40,3 +40,23 @@ header {
 		}
 	}
 }
+
+ul {
+	&.breadcrumbs {
+		padding-left: 0;
+		list-style-type: none;
+
+		li {
+			display: inline;
+
+			&:not(:last-child) {
+				margin-right: 0.5rem;
+
+				&:after {
+					content: '\003E';
+					margin-left: 0.5rem;
+				}
+			}
+		}
+	}
+}

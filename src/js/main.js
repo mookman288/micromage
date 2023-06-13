@@ -7,7 +7,7 @@ import Navigo from 'navigo';
 import { title, description } from './meta';
 import { h, header } from './header';
 import { slugify } from './helper';
-import { a, article } from './body';
+import { a, article, div, li, list } from './body';
 
 //https://github.com/cure53/DOMPurify/issues/317#issuecomment-912474068
 const TEMPORARY_ATTRIBUTE = 'data-temp-href-target'
@@ -38,14 +38,39 @@ marked.setOptions({
 	headerIds: false
 });
 
+
+
 fetch('./config.json').then(response => response.json())
 	.then((config) => {
-		let renderer = {
-			link(href, title, text) {
-				const anchor = new a(href, text, title, config.sitePath);
+		const getRenderer = (route) => {
+			let renderer = {
+				link(href, title, text) {
+					const anchor = new a(href, text, title, config.sitePath);
 
-				return anchor.outerHTML;
+					return anchor.outerHTML;
+				}
+			};
+
+			//If the url of the route is empty or the root.
+			if (route.url == '' || route.url == '/') {
+				renderer.heading = (text, level)  => {
+					if (level == 1) {
+						var anchor = new a('/' + slugify(text), text, null, config.sitePath);
+
+						text = anchor.outerHTML;
+					}
+
+					return '<h' + (level + 1) + '>' + text + '</h' + (level + 1) + '>';
+				};
+			} else {
+				renderer.heading = (text, level)  => {
+					return '<h' + level + '>' + text + '</h' + level + '>';
+				};
 			}
+
+			console.log(renderer);
+
+			return renderer;
 		}
 
 		const hooks = {
@@ -80,12 +105,12 @@ fetch('./config.json').then(response => response.json())
 				postSlug: postSlug
 			});
 
-			router.on('/' + postSlug, () => {
+			router.on('/' + postSlug, (match) => {
 				fetch('./posts/' + postFile + '.md')
 					.then(response => response.text())
 					.then((markdown) => {
 						marked.use({
-							renderer: renderer,
+							renderer: getRenderer(match),
 							hooks: hooks
 						});
 
@@ -96,22 +121,28 @@ fetch('./config.json').then(response => response.json())
 
 						newArticle.innerHTML = html;
 
+						const breadcrumbs = new list('unordered', 'breadcrumbs');
+
+						const backLink = new a('/', 'Back to the Homepage');
+
+						const firstItem = new li();
+
+						firstItem.insertAdjacentElement('beforeend', backLink)
+
+						breadcrumbs.insertAdjacentElement('beforeend', firstItem);
+
+						const secondItem = new li(newArticle.getElementsByTagName('h1')[0].innerText);
+
+						breadcrumbs.insertAdjacentElement('beforeend', secondItem);
+
+						body.insertAdjacentElement('beforeend', breadcrumbs);
+
 						body.insertAdjacentElement('beforeend', newArticle);
 					});
 			});
 		}
 
-		router.on('/', () => {
-			renderer.heading = (text, level) => {
-				if (level == 1) {
-					var anchor = new a('/' + slugify(text), text, null, config.sitePath);
-
-					text = anchor.outerHTML;
-				}
-
-				return '<h' + (level + 1) + '>' + text + '</h' + (level + 1) + '>';
-			};
-
+		router.on('/', (match) => {
 			//Add the <title>.
 			head.insertAdjacentElement('beforeend', new title(config.name));
 
@@ -131,7 +162,7 @@ fetch('./config.json').then(response => response.json())
 					.then(response => response.text())
 					.then((markdown) => {
 						marked.use({
-							renderer: renderer,
+							renderer: getRenderer(match),
 							hooks: hooks
 						});
 
