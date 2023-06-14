@@ -8,6 +8,7 @@
 		"hello-world"
 	],
 	"navigation": {
-		"Home": "/"
+		"Home": "/",
+		"MicroMage": "https://www.github.com/mookman288/micromage"
 	}
 }

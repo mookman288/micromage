@@ -7,13 +7,17 @@ $breakpoints: (
 $colors: (
 	'body-background': #FFFFFF,
 	'accent-background': #F5F5F5,
-	'text': #000000
+	'text': #000000,
+	'link': #0AF,
+	'visited': #51B
 );
 
 $darkModeColors: (
-	'body-background': #555,
-	'accent-background': #000,
-	'text': #FFF
+	'body-background': #000,
+	'accent-background': #0F0F0F,
+	'text': #FFF,
+	'link': #4BF,
+	'visited': #80B
 );
 
 $fontSizes: (

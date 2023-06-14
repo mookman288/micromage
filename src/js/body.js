@@ -13,6 +13,7 @@ export function a(url, text, title, sitePath) {
 	if (url.startsWith('/')) {
 		url = (url.length < 2) ? sitePath : sitePath + '#' + url;
 		a.setAttribute('data-navigo', true);
+		a.setAttribute('target', '_self');
 	} else {
 		a.setAttribute('target', '_blank');
 		a.setAttribute('rel', 'noopener');

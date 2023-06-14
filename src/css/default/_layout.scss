@@ -7,9 +7,18 @@ html {
 	box-sizing: inherit;
 }
 
+a {
+	color: var(--color-link);
+
+	&:visited {
+		color: var(--color-visited);
+	}
+}
+
 body {
 	min-height: 100vh;
 	background-color: var(--color-body-background);
+	color: var(--color-text);
 	font-family: sans-serif, serif;
 
 	> div {
@@ -62,6 +71,7 @@ h1, .logo {
 
 h1 + h2, .logo + .tagline {
 	margin-top: -.5rem;
+	margin-bottom: 1.5rem;
 }
 
 h2, .tagline {
