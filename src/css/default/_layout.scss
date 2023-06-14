@@ -18,6 +18,12 @@ a {
 body {
 	min-height: 100vh;
 	background-color: var(--color-body-background);
+	background: linear-gradient(0deg,
+		var(--color-body-background-gradient-1) 0%,
+		var(--color-body-background-gradient-2) 33%,
+		var(--color-body-background-gradient-3) 66%,
+		var(--color-body-background-gradient-4) 100%);
+	background-attachment: fixed;
 	color: var(--color-text);
 	font-family: sans-serif, serif;
 
@@ -117,6 +123,8 @@ nav {
 }
 
 p {
+	line-height: 1.5;
+
 	&:not(:last-child) {
 		margin-top: 0;
 		margin-bottom: 1rem;

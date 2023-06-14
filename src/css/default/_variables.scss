@@ -5,19 +5,27 @@ $breakpoints: (
 );
 
 $colors: (
-	'body-background': #FFFFFF,
-	'accent-background': #F5F5F5,
-	'text': #000000,
+	'body-background': #FFF,
+	'accent-background': transparentize(#FFF, .25),
+	'body-background-gradient-1': #FA8,
+	'body-background-gradient-2': #FE8,
+	'body-background-gradient-3': #AFF,
+	'body-background-gradient-4': #8CF,
+	'text': #000,
 	'link': #0AF,
-	'visited': #51B
+	'visited': #51B,
 );
 
 $darkModeColors: (
 	'body-background': #000,
-	'accent-background': #0F0F0F,
+	'accent-background': transparentize(#000, .25),
+	'body-background-gradient-1': #B20,
+	'body-background-gradient-2': #903,
+	'body-background-gradient-3': #70A,
+	'body-background-gradient-4': #408,
 	'text': #FFF,
 	'link': #4BF,
-	'visited': #80B
+	'visited': #56F
 );
 
 $fontSizes: (

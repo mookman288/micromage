@@ -8,7 +8,7 @@ export function a(url, text, title, sitePath) {
 
 	let a = document.createElement('a');
 
-	a.innerText = text;
+	a.innerHTML = text;
 
 	if (url.startsWith('/')) {
 		url = (url.length < 2) ? sitePath : sitePath + '#' + url;
