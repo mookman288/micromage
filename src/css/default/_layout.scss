@@ -33,30 +33,92 @@ body {
 	}
 }
 
-header {
-	h1 {
-		&:first-child {
-			margin-top: 0;
-		}
+article {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+
+	&:first-child {
+		margin-top: 2rem;
+	}
+
+	&:last-child {
+		margin-bottom: 2rem;
+	}
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1, .logo {
+	font-size: var(--font-size-1);
+	font-weight: bold;
+}
+
+h1 + h2, .logo + .tagline {
+	margin-top: -.5rem;
+}
+
+h2, .tagline {
+	font-size: var(--font-size-2);
+	font-weight: bold;
+}
+
+.logo, .tagline {
+	display: block;
+	text-align: center;
+}
+
+h3 {
+	font-size: var(--font-size-3);
+	font-weight: bold;
+}
+
+h4 {
+	font-size: var(--font-size-4);
+	font-weight: bold;
+}
+
+h5 {
+	font-size: var(--font-size-5);
+	font-weight: bold;
+}
+
+h6 {
+	font-size: var(--font-size-6);
+	font-weight: bold;
+}
+
+nav {
+	ul {
+		@include inlineList();
+
+		font-weight: bold;
+	}
+}
+
+p {
+	&:not(:last-child) {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+}
+
+li {
+	&:not(:last-child) {
+		margin-bottom: .5rem;
 	}
 }
 
 ul {
 	&.breadcrumbs {
-		padding-left: 0;
-		list-style-type: none;
+		font-size: var(--font-size-9);
 
-		li {
-			display: inline;
-
-			&:not(:last-child) {
-				margin-right: 0.5rem;
-
-				&:after {
-					content: '\003E';
-					margin-left: 0.5rem;
-				}
-			}
-		}
+		@include inlineList('\003E');
 	}
 }

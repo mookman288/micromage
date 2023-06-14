@@ -37,6 +37,10 @@ export function div(classes) {
 	return div;
 }
 
+export function hr() {
+	return document.createElement('hr');
+}
+
 export function li(text, classes) {
 	let li = document.createElement('li');
 
@@ -59,4 +63,24 @@ export function list(type, classes) {
 	}
 
 	return list;
+}
+
+export function p(text) {
+	let p = document.createElement('p');
+
+	p.innerText = text;
+}
+
+export function span(text, classes) {
+	let span = document.createElement('span');
+
+	if (text) {
+		span.innerText = text;
+	}
+
+	if (classes) {
+		span.setAttribute('class', classes);
+	}
+
+	return span;
 }

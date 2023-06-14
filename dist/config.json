@@ -6,5 +6,8 @@
 	"lang": "en",
 	"posts": [
 		"hello-world"
-	]
+	],
+	"navigation": {
+		"Home": "/"
+	}
 }

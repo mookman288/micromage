@@ -5,15 +5,28 @@ $breakpoints: (
 );
 
 $colors: (
-	'body-background': #FFF,
-	'accent-background': #EEE,
-	'text': #000
+	'body-background': #FFFFFF,
+	'accent-background': #F5F5F5,
+	'text': #000000
 );
 
 $darkModeColors: (
 	'body-background': #555,
 	'accent-background': #000,
 	'text': #FFF
+);
+
+$fontSizes: (
+	'1': '2.4rem',
+	'2': '2.2rem',
+	'3': '2rem',
+	'4': '1.8rem',
+	'5': '1.6rem',
+	'6': '1.4rem',
+	'7': '1.2rem',
+	'8': '1rem',
+	'9': '.8rem',
+	'10': '.6rem'
 );
 
 :root {
@@ -23,6 +36,10 @@ $darkModeColors: (
 
 	@each $name, $breakpoint in $breakpoints {
 		--breakpoint-#{$name}: #{$breakpoint};
+	}
+
+	@each $number, $size in $fontSizes {
+		--font-size-#{$number}: #{$size};
 	}
 }
 
