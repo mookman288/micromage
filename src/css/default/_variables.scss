@@ -54,3 +54,11 @@ $fontSizes: (
 		}
 	}
 }
+
+@media all and (max-width: map-get($breakpoints, 'desktop')) {
+	:root {
+		@each $number, $size in $fontSizes {
+			--font-size-#{$number}: #{$size} * 0.75;
+		}
+	}
+}

@@ -28,16 +28,16 @@ body {
 		min-height: 100vh;
 		background-color: var(--color-accent-background);
 
-		@media all and (max-width: var(--breakpoint-mobile)) {
-			width: 100%;
+		@media all and (max-width: map-get($breakpoints, 'widescreen')) {
+			width: 70%;
 		}
 
-		@media all and (max-width: var(--breakpoint-desktop)) {
+		@media all and (max-width: map-get($breakpoints, 'desktop')) {
 			width: 85%;
 		}
 
-		@media all and (max-width: var(--breakpoint-widescreen)) {
-			width: 70%;
+		@media all and (max-width: map-get($breakpoints, 'mobile')) {
+			width: 100%;
 		}
 	}
 }
@@ -102,6 +102,10 @@ h5 {
 h6 {
 	font-size: var(--font-size-6);
 	font-weight: bold;
+}
+
+img {
+	max-width: 100%;
 }
 
 nav {
