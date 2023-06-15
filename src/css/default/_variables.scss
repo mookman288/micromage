@@ -6,11 +6,12 @@ $breakpoints: (
 
 $colors: (
 	'body-background': #FFF,
-	'accent-background': transparentize(#FFF, .25),
+	'accent-background': transparentize(#FFF, .15),
+	'body-background-gradient-0': #FE8,
 	'body-background-gradient-1': #FA8,
-	'body-background-gradient-2': #FE8,
-	'body-background-gradient-3': #AFF,
-	'body-background-gradient-4': #8CF,
+	'body-background-gradient-2': #AFF,
+	'body-background-gradient-3': #8CF,
+	'border-color': #EEE,
 	'text': #000,
 	'link': #0AF,
 	'visited': #51B,
@@ -18,11 +19,12 @@ $colors: (
 
 $darkModeColors: (
 	'body-background': #000,
-	'accent-background': transparentize(#000, .25),
-	'body-background-gradient-1': #B20,
-	'body-background-gradient-2': #903,
-	'body-background-gradient-3': #70A,
-	'body-background-gradient-4': #408,
+	'accent-background': transparentize(#000, .15),
+	'body-background-gradient-0': #B20,
+	'body-background-gradient-1': #906,
+	'body-background-gradient-2': #70A,
+	'body-background-gradient-3': #048,
+	'border-color': #666,
 	'text': #FFF,
 	'link': #4BF,
 	'visited': #A8F
