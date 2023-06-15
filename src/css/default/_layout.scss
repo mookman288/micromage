@@ -58,6 +58,13 @@ article {
 	&:last-child {
 		margin-bottom: 2rem;
 	}
+
+	&:not(:last-child) {
+		border-width: 0;
+		border-bottom: var(--border-width);
+		border-style: var(--border-style);
+		border-color: var(--color-border);
+	}
 }
 
 h1, h2, h3, h4, h5, h6, .logo {
@@ -107,6 +114,13 @@ h5 {
 h6 {
 	font-size: var(--font-size-6);
 	font-weight: bold;
+}
+
+hr {
+	border-width: 0;
+	border-bottom: var(--border-width);
+	border-style: var(--border-style);
+	border-color: var(--color-border);
 }
 
 img {

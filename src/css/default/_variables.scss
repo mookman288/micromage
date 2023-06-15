@@ -4,6 +4,9 @@ $breakpoints: (
 	'widescreen': 1680px
 );
 
+$border-style: solid;
+$border-width: 1px;
+
 $colors: (
 	'body-background': #FFF,
 	'accent-background': transparentize(#FFF, .15),
@@ -11,7 +14,7 @@ $colors: (
 	'body-background-gradient-1': #FA8,
 	'body-background-gradient-2': #AFF,
 	'body-background-gradient-3': #8CF,
-	'border-color': #EEE,
+	'border': #333,
 	'text': #000,
 	'link': #0AF,
 	'visited': #51B,
@@ -24,7 +27,7 @@ $darkModeColors: (
 	'body-background-gradient-1': #906,
 	'body-background-gradient-2': #70A,
 	'body-background-gradient-3': #048,
-	'border-color': #666,
+	'border': #DDD,
 	'text': #FFF,
 	'link': #4BF,
 	'visited': #A8F
@@ -44,6 +47,9 @@ $fontSizes: (
 );
 
 :root {
+	--border-style: #{$border-style};
+	--border-width: #{$border-width};
+
 	@each $name, $color in $colors {
 		--color-#{$name}: #{$color};
 	}
